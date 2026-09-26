@@ -174,27 +174,4 @@ cancelaciones y entradas concurrentes. `kotlinx-coroutines-test` permite avanzar
 tiempo virtual y comprobar exactamente las esperas sin esperar segundos reales
 en cada prueba. Es una dependencia exclusiva de pruebas.
 
-## 20 preguntas y respuestas para la defensa
 
-1. **¿Por qué Paciente es abstracta?** Porque reúne lo común y obliga a concretar el costo en cada tipo.
-2. **¿Qué clases heredan de Paciente?** Canino, Felino y Exotico.
-3. **¿Dónde se usa polimorfismo?** Al calcular la tarifa de un Paciente se ejecuta el costo de su subclase real.
-4. **¿Qué hace override?** Implementa o redefine un miembro heredado.
-5. **¿Por qué los datos del paciente usan val?** Para impedir su reasignación después de construirlo.
-6. **¿Por qué TipoDueno es enum class?** Porque solo existen tres opciones válidas.
-7. **¿Por qué EstadoBox es sealed class?** Porque hay cuatro variantes conocidas y algunas necesitan guardar datos.
-8. **¿Qué guarda EnAtencion?** El paciente que ocupa el box.
-9. **¿Qué ventaja tiene un when exhaustivo?** Obliga a contemplar cada variante del estado.
-10. **¿Cómo se crean los diez boxes?** Con MutableList(10), usando el índice más uno como número.
-11. **¿Qué valida la Regex?** Que todo el código tenga dos letras, dos dígitos y dos letras.
-12. **¿Cómo se transforman minutos a horas?** Dividiendo por 60.0 para conservar decimales.
-13. **¿Cómo cobra un Canino con convenio?** Horas por 12.000, descuento del 20% y luego IVA.
-14. **¿Cuándo un Felino paga cero?** Cuando su atención válida dura menos de 20 minutos.
-15. **¿Cómo cobra un Exótico silvestre municipal?** Base por tiempo, recargo del 30%, IVA y descuento municipal del 50%.
-16. **¿Por qué Ticket es data class?** Porque representa datos de una atención terminada y necesita igualdad por contenido.
-17. **¿Qué hacen try, catch y throw?** Ejecutan código protegido, capturan errores y comunican errores, respectivamente.
-18. **¿Qué diferencia hay entre delay y Thread.sleep?** delay suspende la corrutina; Thread.sleep bloquea el hilo.
-19. **¿Qué ocurre si falla una salida?** Se conserva al paciente, sin ticket ni recaudación nueva, y se puede reintentar.
-20. **¿Qué operaciones resuelven las consultas?** count cuenta, filter selecciona, map transforma, average promedia y maxByOrNull busca el máximo.
-
-Referencia de corrutinas: https://kotlinlang.org/docs/coroutines-basics.html
